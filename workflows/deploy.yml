@@ -1,0 +1,64 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Cancel in-flight deploys if a new commit lands on main.
+concurrency:
+  group: firebase-hosting
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build & deploy web
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run unit tests
+        run: flutter test --reporter expanded
+
+      - name: Build web (release)
+        run: flutter build web --release --no-tree-shake-icons
+
+      # Optional: build Cloud Functions if they exist. Functions deploy uses
+      # the same service account credentials.
+      - name: Setup Node
+        if: ${{ hashFiles('functions/package.json') != '' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build functions
+        if: ${{ hashFiles('functions/package.json') != '' }}
+        run: |
+          npm --prefix functions ci
+          npm --prefix functions run build
+
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ vars.FIREBASE_PROJECT_ID }}
+          channelId: live
+          # Add `entryPoint: ./` and `target: <site>` if you use multiple
+          # hosting targets.

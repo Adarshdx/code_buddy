@@ -1,0 +1,391 @@
+[
+  {
+    "id": "two-sum",
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "tags": [
+      "array",
+      "hash-table"
+    ],
+    "statement": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. Assume each input has exactly one solution and you may not use the same element twice.",
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] == 9, so return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]"
+      }
+    ],
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "hint": "Walk the array once. For each value, ask: have I already seen `target - value`? A hash map of value -> index makes that lookup O(1).",
+    "starters": {
+      "Dart": "List<int> twoSum(List<int> nums, int target) {\n  // TODO: return the indices that add up to target.\n  return <int>[];\n}\n\nvoid main() {\n  print(twoSum(<int>[2, 7, 11, 15], 9));\n}\n",
+      "Python": "def two_sum(nums, target):\n    # TODO: return the indices that add up to target.\n    return []\n\nif __name__ == '__main__':\n    print(two_sum([2, 7, 11, 15], 9))\n",
+      "JavaScript": "function twoSum(nums, target) {\n  // TODO: return the indices that add up to target.\n  return [];\n}\n\nconsole.log(twoSum([2, 7, 11, 15], 9));\n",
+      "Java": "import java.util.*;\n\npublic class Main {\n  public static int[] twoSum(int[] nums, int target) {\n    // TODO\n    return new int[]{};\n  }\n\n  public static void main(String[] args) {\n    System.out.println(Arrays.toString(twoSum(new int[]{2, 7, 11, 15}, 9)));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<int> twoSum(vector<int>& nums, int target) {\n  // TODO\n  return {};\n}\n\nint main() {\n  vector<int> v{2, 7, 11, 15};\n  auto r = twoSum(v, 9);\n  cout << \"[\" << r[0] << \",\" << r[1] << \"]\";\n}\n"
+    },
+    "pythonTests": "r = two_sum([2, 7, 11, 15], 9)\nassert sorted(r) == [0, 1], f'Expected [0, 1], got {r}'\nr = two_sum([3, 2, 4], 6)\nassert sorted(r) == [1, 2], f'Expected [1, 2], got {r}'\nr = two_sum([3, 3], 6)\nassert sorted(r) == [0, 1], f'Expected [0, 1], got {r}'\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "reverse-string",
+    "title": "Reverse String",
+    "difficulty": "Easy",
+    "tags": [
+      "string",
+      "two-pointers"
+    ],
+    "statement": "Reverse the input string in place. The input is given as a list of characters.",
+    "examples": [
+      {
+        "input": "s = ['h','e','l','l','o']",
+        "output": "['o','l','l','e','h']"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s[i] is a printable ASCII character."
+    ],
+    "hint": "Use two pointers: one at the start, one at the end. Swap, move both, repeat until they meet.",
+    "starters": {
+      "Dart": "void reverseString(List<String> s) {\n  // TODO: reverse in place.\n}\n\nvoid main() {\n  final s = ['h', 'e', 'l', 'l', 'o'];\n  reverseString(s);\n  print(s);\n}\n",
+      "Python": "def reverse_string(s):\n    # TODO: reverse s in place.\n    pass\n\nif __name__ == '__main__':\n    s = list('hello')\n    reverse_string(s)\n    print(s)\n",
+      "JavaScript": "function reverseString(s) {\n  // TODO: reverse s in place.\n}\n\nconst s = ['h','e','l','l','o'];\nreverseString(s);\nconsole.log(s);\n",
+      "Java": "import java.util.*;\n\npublic class Main {\n  public static void reverseString(char[] s) {\n    // TODO\n  }\n\n  public static void main(String[] args) {\n    char[] s = {'h','e','l','l','o'};\n    reverseString(s);\n    System.out.println(Arrays.toString(s));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid reverseString(vector<char>& s) {\n  // TODO\n}\n\nint main() {\n  vector<char> s{'h','e','l','l','o'};\n  reverseString(s);\n  for (char c : s) cout << c;\n}\n"
+    },
+    "pythonTests": "s = list('hello')\nreverse_string(s)\nassert s == ['o','l','l','e','h'], f'Got {s}'\ns = list('A')\nreverse_string(s)\nassert s == ['A'], f'Got {s}'\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "palindrome-check",
+    "title": "Valid Palindrome",
+    "difficulty": "Easy",
+    "tags": [
+      "string",
+      "two-pointers"
+    ],
+    "statement": "A phrase is a palindrome if, after lowercasing and removing all non-alphanumeric characters, it reads the same forward and backward. Return true if the input string is a palindrome, false otherwise.",
+    "examples": [
+      {
+        "input": "s = 'A man, a plan, a canal: Panama'",
+        "output": "true"
+      },
+      {
+        "input": "s = 'race a car'",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 2 * 10^5"
+    ],
+    "hint": "Two pointers moving toward each other. Skip non-alphanumeric, compare lowercased characters, stop on mismatch.",
+    "starters": {
+      "Dart": "bool isPalindrome(String s) {\n  // TODO\n  return false;\n}\n\nvoid main() {\n  print(isPalindrome('A man, a plan, a canal: Panama'));\n}\n",
+      "Python": "def is_palindrome(s):\n    # TODO\n    return False\n\nif __name__ == '__main__':\n    print(is_palindrome('A man, a plan, a canal: Panama'))\n",
+      "JavaScript": "function isPalindrome(s) {\n  // TODO\n  return false;\n}\n\nconsole.log(isPalindrome('A man, a plan, a canal: Panama'));\n",
+      "Java": "public class Main {\n  public static boolean isPalindrome(String s) {\n    // TODO\n    return false;\n  }\n\n  public static void main(String[] args) {\n    System.out.println(isPalindrome(\"A man, a plan, a canal: Panama\"));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nbool isPalindrome(string s) {\n  // TODO\n  return false;\n}\n\nint main() {\n  cout << boolalpha << isPalindrome(\"A man, a plan, a canal: Panama\");\n}\n"
+    },
+    "pythonTests": "assert is_palindrome('A man, a plan, a canal: Panama') is True\nassert is_palindrome('race a car') is False\nassert is_palindrome(' ') is True\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "fizzbuzz",
+    "title": "FizzBuzz",
+    "difficulty": "Easy",
+    "tags": [
+      "math",
+      "simulation"
+    ],
+    "statement": "Return a list of strings of length n where for each i from 1 to n: 'FizzBuzz' if i is divisible by 15, 'Fizz' if divisible by 3, 'Buzz' if divisible by 5, otherwise the number itself as a string.",
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "['1', '2', 'Fizz', '4', 'Buzz']"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 10^4"
+    ],
+    "hint": "Check divisibility by 15 first to avoid double-checks. A single loop, no DP needed.",
+    "starters": {
+      "Dart": "List<String> fizzBuzz(int n) {\n  // TODO\n  return <String>[];\n}\n\nvoid main() {\n  print(fizzBuzz(15));\n}\n",
+      "Python": "def fizz_buzz(n):\n    # TODO\n    return []\n\nif __name__ == '__main__':\n    print(fizz_buzz(15))\n",
+      "JavaScript": "function fizzBuzz(n) {\n  // TODO\n  return [];\n}\n\nconsole.log(fizzBuzz(15));\n",
+      "Java": "import java.util.*;\n\npublic class Main {\n  public static List<String> fizzBuzz(int n) {\n    // TODO\n    return new ArrayList<>();\n  }\n\n  public static void main(String[] args) {\n    System.out.println(fizzBuzz(15));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<string> fizzBuzz(int n) {\n  // TODO\n  return {};\n}\n\nint main() {\n  for (auto& s : fizzBuzz(15)) cout << s << ' ';\n}\n"
+    },
+    "pythonTests": "assert fizz_buzz(5) == ['1','2','Fizz','4','Buzz']\nr = fizz_buzz(15)\nassert r[-1] == 'FizzBuzz' and r[2] == 'Fizz' and r[4] == 'Buzz', f'Got {r}'\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "valid-parentheses",
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "tags": [
+      "stack",
+      "string"
+    ],
+    "statement": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the string is valid. A string is valid if open brackets are closed by the same type, and in the correct order.",
+    "examples": [
+      {
+        "input": "s = '()[]{}'",
+        "output": "true"
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of brackets only."
+    ],
+    "hint": "Push openers onto a stack. On a closer, the top must match. End with an empty stack.",
+    "starters": {
+      "Dart": "bool isValid(String s) {\n  // TODO\n  return false;\n}\n\nvoid main() {\n  print(isValid('()[]{}'));\n}\n",
+      "Python": "def is_valid(s):\n    # TODO\n    return False\n\nif __name__ == '__main__':\n    print(is_valid('()[]{}'))\n",
+      "JavaScript": "function isValid(s) {\n  // TODO\n  return false;\n}\n\nconsole.log(isValid('()[]{}'));\n",
+      "Java": "import java.util.*;\n\npublic class Main {\n  public static boolean isValid(String s) {\n    // TODO\n    return false;\n  }\n\n  public static void main(String[] args) {\n    System.out.println(isValid(\"()[]{}\"));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nbool isValid(string s) {\n  // TODO\n  return false;\n}\n\nint main() {\n  cout << boolalpha << isValid(\"()[]{}\");\n}\n"
+    },
+    "pythonTests": "assert is_valid('()[]{}') is True\nassert is_valid('(]') is False\nassert is_valid('([{}])') is True\nassert is_valid('(') is False\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "binary-search",
+    "title": "Binary Search",
+    "difficulty": "Easy",
+    "tags": [
+      "array",
+      "binary-search"
+    ],
+    "statement": "Given a sorted array nums and a target value, return the index of target. If it doesn't exist, return -1. Solve in O(log n) time.",
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 3, 5, 9, 12], target = 9",
+        "output": "4"
+      },
+      {
+        "input": "nums = [-1, 0, 3, 5, 9, 12], target = 2",
+        "output": "-1"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "nums is sorted in strictly increasing order."
+    ],
+    "hint": "Maintain low/high pointers. Compute mid = low + (high - low) / 2 to avoid overflow. Move the bound that doesn't contain target.",
+    "starters": {
+      "Dart": "int search(List<int> nums, int target) {\n  // TODO\n  return -1;\n}\n\nvoid main() {\n  print(search(<int>[-1, 0, 3, 5, 9, 12], 9));\n}\n",
+      "Python": "def search(nums, target):\n    # TODO\n    return -1\n\nif __name__ == '__main__':\n    print(search([-1, 0, 3, 5, 9, 12], 9))\n",
+      "JavaScript": "function search(nums, target) {\n  // TODO\n  return -1;\n}\n\nconsole.log(search([-1, 0, 3, 5, 9, 12], 9));\n",
+      "Java": "public class Main {\n  public static int search(int[] nums, int target) {\n    // TODO\n    return -1;\n  }\n\n  public static void main(String[] args) {\n    System.out.println(search(new int[]{-1, 0, 3, 5, 9, 12}, 9));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nint search(vector<int>& nums, int target) {\n  // TODO\n  return -1;\n}\n\nint main() {\n  vector<int> v{-1, 0, 3, 5, 9, 12};\n  cout << search(v, 9);\n}\n"
+    },
+    "pythonTests": "assert search([-1, 0, 3, 5, 9, 12], 9) == 4\nassert search([-1, 0, 3, 5, 9, 12], 2) == -1\nassert search([5], 5) == 0\nassert search([5], -5) == -1\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "climbing-stairs",
+    "title": "Climbing Stairs",
+    "difficulty": "Easy",
+    "tags": [
+      "dp",
+      "math"
+    ],
+    "statement": "You are climbing a staircase of n steps. Each time you can climb 1 or 2 steps. Return the number of distinct ways to reach the top.",
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "1+1 or 2."
+      },
+      {
+        "input": "n = 4",
+        "output": "5"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "hint": "ways(n) = ways(n-1) + ways(n-2). It is Fibonacci with different base cases. Use two variables, not an array.",
+    "starters": {
+      "Dart": "int climbStairs(int n) {\n  // TODO\n  return 0;\n}\n\nvoid main() {\n  print(climbStairs(5));\n}\n",
+      "Python": "def climb_stairs(n):\n    # TODO\n    return 0\n\nif __name__ == '__main__':\n    print(climb_stairs(5))\n",
+      "JavaScript": "function climbStairs(n) {\n  // TODO\n  return 0;\n}\n\nconsole.log(climbStairs(5));\n",
+      "Java": "public class Main {\n  public static int climbStairs(int n) {\n    // TODO\n    return 0;\n  }\n\n  public static void main(String[] args) {\n    System.out.println(climbStairs(5));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nint climbStairs(int n) {\n  // TODO\n  return 0;\n}\n\nint main() {\n  cout << climbStairs(5);\n}\n"
+    },
+    "pythonTests": "assert climb_stairs(1) == 1\nassert climb_stairs(2) == 2\nassert climb_stairs(4) == 5\nassert climb_stairs(10) == 89\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "best-time-stock",
+    "title": "Best Time to Buy and Sell Stock",
+    "difficulty": "Easy",
+    "tags": [
+      "array",
+      "dp"
+    ],
+    "statement": "You have prices[i] = the price of a stock on day i. You may buy on one day and sell on a later day. Return the maximum profit. If no profit is possible, return 0.",
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 at 1, sell on day 5 at 6."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0"
+      }
+    ],
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "hint": "Track the minimum price seen so far. For each day, the best sell-today profit is price - minSoFar.",
+    "starters": {
+      "Dart": "int maxProfit(List<int> prices) {\n  // TODO\n  return 0;\n}\n\nvoid main() {\n  print(maxProfit(<int>[7, 1, 5, 3, 6, 4]));\n}\n",
+      "Python": "def max_profit(prices):\n    # TODO\n    return 0\n\nif __name__ == '__main__':\n    print(max_profit([7, 1, 5, 3, 6, 4]))\n",
+      "JavaScript": "function maxProfit(prices) {\n  // TODO\n  return 0;\n}\n\nconsole.log(maxProfit([7, 1, 5, 3, 6, 4]));\n",
+      "Java": "public class Main {\n  public static int maxProfit(int[] prices) {\n    // TODO\n    return 0;\n  }\n\n  public static void main(String[] args) {\n    System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nint maxProfit(vector<int>& prices) {\n  // TODO\n  return 0;\n}\n\nint main() {\n  vector<int> p{7, 1, 5, 3, 6, 4};\n  cout << maxProfit(p);\n}\n"
+    },
+    "pythonTests": "assert max_profit([7, 1, 5, 3, 6, 4]) == 5\nassert max_profit([7, 6, 4, 3, 1]) == 0\nassert max_profit([1]) == 0\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "maximum-subarray",
+    "title": "Maximum Subarray",
+    "difficulty": "Medium",
+    "tags": [
+      "dp",
+      "array",
+      "kadane"
+    ],
+    "statement": "Given an integer array nums, return the largest sum of any contiguous non-empty subarray.",
+    "examples": [
+      {
+        "input": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+        "output": "6",
+        "explanation": "Subarray [4, -1, 2, 1] sums to 6."
+      },
+      {
+        "input": "nums = [5, 4, -1, 7, 8]",
+        "output": "23"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "hint": "Kadane: at each index, either extend the running sum or reset to the current value if extending makes things worse. Track the best so far.",
+    "starters": {
+      "Dart": "int maxSubArray(List<int> nums) {\n  // TODO\n  return 0;\n}\n\nvoid main() {\n  print(maxSubArray(<int>[-2, 1, -3, 4, -1, 2, 1, -5, 4]));\n}\n",
+      "Python": "def max_subarray(nums):\n    # TODO\n    return 0\n\nif __name__ == '__main__':\n    print(max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))\n",
+      "JavaScript": "function maxSubArray(nums) {\n  // TODO\n  return 0;\n}\n\nconsole.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));\n",
+      "Java": "public class Main {\n  public static int maxSubArray(int[] nums) {\n    // TODO\n    return 0;\n  }\n\n  public static void main(String[] args) {\n    System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nint maxSubArray(vector<int>& nums) {\n  // TODO\n  return 0;\n}\n\nint main() {\n  vector<int> v{-2, 1, -3, 4, -1, 2, 1, -5, 4};\n  cout << maxSubArray(v);\n}\n"
+    },
+    "pythonTests": "assert max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6\nassert max_subarray([1]) == 1\nassert max_subarray([5, 4, -1, 7, 8]) == 23\nassert max_subarray([-1, -2, -3]) == -1\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "merge-sorted-arrays",
+    "title": "Merge Two Sorted Arrays",
+    "difficulty": "Easy",
+    "tags": [
+      "array",
+      "two-pointers"
+    ],
+    "statement": "Given two sorted integer arrays a and b, return a single sorted array that contains all elements of both. Aim for O(n + m).",
+    "examples": [
+      {
+        "input": "a = [1, 3, 5], b = [2, 4, 6]",
+        "output": "[1, 2, 3, 4, 5, 6]"
+      },
+      {
+        "input": "a = [], b = [1]",
+        "output": "[1]"
+      }
+    ],
+    "constraints": [
+      "0 <= a.length, b.length <= 10^4",
+      "a and b are each sorted in non-decreasing order."
+    ],
+    "hint": "Two pointers, one per array. Append the smaller current element to the result, advance that pointer. Drain the rest at the end.",
+    "starters": {
+      "Dart": "List<int> mergeSorted(List<int> a, List<int> b) {\n  // TODO\n  return <int>[];\n}\n\nvoid main() {\n  print(mergeSorted(<int>[1, 3, 5], <int>[2, 4, 6]));\n}\n",
+      "Python": "def merge_sorted(a, b):\n    # TODO\n    return []\n\nif __name__ == '__main__':\n    print(merge_sorted([1, 3, 5], [2, 4, 6]))\n",
+      "JavaScript": "function mergeSorted(a, b) {\n  // TODO\n  return [];\n}\n\nconsole.log(mergeSorted([1, 3, 5], [2, 4, 6]));\n",
+      "Java": "import java.util.*;\n\npublic class Main {\n  public static int[] mergeSorted(int[] a, int[] b) {\n    // TODO\n    return new int[]{};\n  }\n\n  public static void main(String[] args) {\n    System.out.println(Arrays.toString(mergeSorted(new int[]{1, 3, 5}, new int[]{2, 4, 6})));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<int> mergeSorted(vector<int>& a, vector<int>& b) {\n  // TODO\n  return {};\n}\n\nint main() {\n  vector<int> a{1, 3, 5}, b{2, 4, 6};\n  for (int x : mergeSorted(a, b)) cout << x << ' ';\n}\n"
+    },
+    "pythonTests": "assert merge_sorted([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6]\nassert merge_sorted([], [1]) == [1]\nassert merge_sorted([2, 2], [1, 1]) == [1, 1, 2, 2]\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "group-anagrams",
+    "title": "Group Anagrams",
+    "difficulty": "Medium",
+    "tags": [
+      "hashing",
+      "string"
+    ],
+    "statement": "Given a list of strings, group the anagrams together. Return the groups in any order.",
+    "examples": [
+      {
+        "input": "strs = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']",
+        "output": "[['eat','tea','ate'], ['tan','nat'], ['bat']]"
+      }
+    ],
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] is lowercase English letters."
+    ],
+    "hint": "Two strings are anagrams iff their sorted characters match. Use that sorted string as a key in a hash map of lists.",
+    "starters": {
+      "Dart": "List<List<String>> groupAnagrams(List<String> strs) {\n  // TODO\n  return <List<String>>[];\n}\n\nvoid main() {\n  print(groupAnagrams(<String>['eat','tea','tan','ate','nat','bat']));\n}\n",
+      "Python": "def group_anagrams(strs):\n    # TODO\n    return []\n\nif __name__ == '__main__':\n    print(group_anagrams(['eat','tea','tan','ate','nat','bat']))\n",
+      "JavaScript": "function groupAnagrams(strs) {\n  // TODO\n  return [];\n}\n\nconsole.log(groupAnagrams(['eat','tea','tan','ate','nat','bat']));\n",
+      "Java": "import java.util.*;\n\npublic class Main {\n  public static List<List<String>> groupAnagrams(String[] strs) {\n    // TODO\n    return new ArrayList<>();\n  }\n\n  public static void main(String[] args) {\n    System.out.println(groupAnagrams(new String[]{\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"}));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nvector<vector<string>> groupAnagrams(vector<string>& strs) {\n  // TODO\n  return {};\n}\n\nint main() {\n  vector<string> v{\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"};\n  for (auto& g : groupAnagrams(v)) {\n    for (auto& s : g) cout << s << ' ';\n    cout << '\\n';\n  }\n}\n"
+    },
+    "pythonTests": "r = group_anagrams(['eat','tea','tan','ate','nat','bat'])\nnorm = sorted(tuple(sorted(g)) for g in r)\nassert norm == [('ate','eat','tea'), ('bat',), ('nat','tan')], f'Got {norm}'\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  },
+  {
+    "id": "longest-unique-substring",
+    "title": "Longest Substring Without Repeating Characters",
+    "difficulty": "Medium",
+    "tags": [
+      "sliding-window",
+      "string",
+      "hashing"
+    ],
+    "statement": "Given a string s, return the length of the longest substring without repeating characters.",
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The answer is 'abc', of length 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4"
+    ],
+    "hint": "Sliding window: keep a set of seen characters and two pointers. When a duplicate enters, advance the left pointer past the previous occurrence.",
+    "starters": {
+      "Dart": "int lengthOfLongestSubstring(String s) {\n  // TODO\n  return 0;\n}\n\nvoid main() {\n  print(lengthOfLongestSubstring('abcabcbb'));\n}\n",
+      "Python": "def length_of_longest_substring(s):\n    # TODO\n    return 0\n\nif __name__ == '__main__':\n    print(length_of_longest_substring('abcabcbb'))\n",
+      "JavaScript": "function lengthOfLongestSubstring(s) {\n  // TODO\n  return 0;\n}\n\nconsole.log(lengthOfLongestSubstring('abcabcbb'));\n",
+      "Java": "public class Main {\n  public static int lengthOfLongestSubstring(String s) {\n    // TODO\n    return 0;\n  }\n\n  public static void main(String[] args) {\n    System.out.println(lengthOfLongestSubstring(\"abcabcbb\"));\n  }\n}\n",
+      "C++": "#include <bits/stdc++.h>\nusing namespace std;\n\nint lengthOfLongestSubstring(string s) {\n  // TODO\n  return 0;\n}\n\nint main() {\n  cout << lengthOfLongestSubstring(\"abcabcbb\");\n}\n"
+    },
+    "pythonTests": "assert length_of_longest_substring('abcabcbb') == 3\nassert length_of_longest_substring('bbbbb') == 1\nassert length_of_longest_substring('pwwkew') == 3\nassert length_of_longest_substring('') == 0\nprint('__CODE_BUDDY_ALL_PASSED__')\n"
+  }
+]

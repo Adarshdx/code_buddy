@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Code-Buddy: a student-friendly coding cockpit with mini IDE, AI tutor, snippets, and Flutter starters.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0D1117">
+  <meta name="color-scheme" content="dark light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Code-Buddy">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <title>Code-Buddy</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #0D1117;
+      color: #C9D1D9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    #boot {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      z-index: 1;
+      transition: opacity 220ms ease-out;
+    }
+    #boot.boot-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #boot .spinner {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 3px solid rgba(88, 166, 255, 0.2);
+      border-top-color: #58A6FF;
+      animation: boot-spin 0.9s linear infinite;
+    }
+    #boot .label {
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: #8B949E;
+    }
+    @keyframes boot-spin {
+      to { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #boot .spinner { animation-duration: 2.5s; }
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="padding: 40px; max-width: 480px; margin: 80px auto; background: #161B22; border: 1px solid #30363D; border-radius: 8px;">
+      <h1 style="margin-top: 0; color: #ffffff;">Code-Buddy needs JavaScript</h1>
+      <p>This is a Flutter web app. Please enable JavaScript in your browser to use the IDE, AI tutor, snippet manager, and other features.</p>
+    </div>
+  </noscript>
+
+  <div id="boot">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="label">Loading Code-Buddy...</div>
+  </div>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var boot = document.getElementById('boot');
+      if (!boot) return;
+      boot.classList.add('boot-hidden');
+      setTimeout(function () {
+        if (boot && boot.parentNode) boot.parentNode.removeChild(boot);
+      }, 320);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
