@@ -87,23 +87,26 @@ The project integrates Artificial Intelligence to assist users in identifying er
 
 ### Home Screen
 
-![Home Screen](screenshots/01home_page.png)
+![Home Screen](screenshots/01home_page.png)<img width="1920" height="1080" alt="01home_page" src="https://github.com/user-attachments/assets/3835a111-6532-4b0b-a9fa-8aa11565480e" />
+
 
 ### AI Assistant
 
-![AI Assistant](screenshots/04ai.png)
+![AI Assistant](screenshots/04ai.png)<img width="1920" height="1080" alt="04ai" src="https://github.com/user-attachments/assets/c7e43aff-29c0-4f7c-a5a9-8136a111ca30" />
 
 ### IDE
 
-![IDE](screenshots/05ide.png)
+![IDE](screenshots/05ide.png)<img width="1920" height="1080" alt="05ide" src="https://github.com/user-attachments/assets/a1e309d7-ee0a-4a08-b505-08fa7b35975f" />
+
 
 ### LOGIN PAGE
 
-![LOGIN PAGE](screenshots/02login_page.png)
+![LOGIN PAGE](screenshots/02login_page.png)<img width="1920" height="1080" alt="02login_page" src="https://github.com/user-attachments/assets/86e66e46-3403-4edc-93ae-670ba554c2a2" />
+
 
 ### LEARNING HUB
 
-![LEARNING HUB](screenshots/03learning_hub.png)
+![LEARNING HUB](screenshots/03learning_hub.png)<img width="1920" height="1080" alt="03learning_hub" src="https://github.com/user-attachments/assets/530603d6-e244-45f5-8f77-f9bc44879c94" />
 
 ---
 
