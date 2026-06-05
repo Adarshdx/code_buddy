@@ -2,7 +2,7 @@
 
 > An AI-powered mobile coding assistant designed for students and beginner developers. Code-Buddy combines a mini IDE, intelligent debugging, code snippet management, Flutter boilerplate generation, and an interactive learning platform into a single application.
 
-## 🚀 Project Overview
+##  Project Overview
 
 Code-Buddy was developed to simplify the coding experience for students by providing essential development tools in one platform. Instead of switching between multiple applications for coding, debugging, learning, and managing snippets, users can perform all these tasks within a unified environment.
 
@@ -10,43 +10,43 @@ The project integrates Artificial Intelligence to assist users in identifying er
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 💻 Mini IDE
+###  Mini IDE
 
 * Multi-tab code editor
 * Syntax highlighting
 * File persistence
 * Tab management
 
-### 🤖 AI Debugging Assistant
+###  AI Debugging Assistant
 
 * "Fix My Code" functionality
 * AI-powered error analysis
 * Code explanations and suggestions
 * Retry and response streaming support
 
-### 📚 Learning Hub
+###  Learning Hub
 
 * DSA practice problems
 * AI-generated hints
 * Python auto-grading
 * Beginner-friendly explanations
 
-### 📂 Snippet Manager
+###  Snippet Manager
 
 * Save reusable code snippets
 * Search and categorize snippets
 * Favorite frequently used snippets
 * Offline-first storage
 
-### ⚡ Flutter Boilerplate Generator
+###  Flutter Boilerplate Generator
 
 * Generate starter Flutter projects
 * Reduce repetitive setup work
 * Accelerate development workflow
 
-### 🌐 Progressive Web App (PWA)
+###  Progressive Web App (PWA)
 
 * Installable web application
 * Offline support
@@ -54,7 +54,7 @@ The project integrates Artificial Intelligence to assist users in identifying er
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -83,34 +83,34 @@ The project integrates Artificial Intelligence to assist users in identifying er
 
 ---
 
-## 📸 Application Screenshots
+##  Application Screenshots
 
 ### Home Screen
 
-![Home Screen](screenshots/01home_page.png)<img width="1920" height="1080" alt="01home_page" src="https://github.com/user-attachments/assets/3835a111-6532-4b0b-a9fa-8aa11565480e" />
+<img width="1920" height="1080" alt="01home_page" src="https://github.com/user-attachments/assets/3835a111-6532-4b0b-a9fa-8aa11565480e" />
 
 
 ### AI Assistant
 
-![AI Assistant](screenshots/04ai.png)<img width="1920" height="1080" alt="04ai" src="https://github.com/user-attachments/assets/c7e43aff-29c0-4f7c-a5a9-8136a111ca30" />
+<img width="1920" height="1080" alt="04ai" src="https://github.com/user-attachments/assets/c7e43aff-29c0-4f7c-a5a9-8136a111ca30" />
 
 ### IDE
 
-![IDE](screenshots/05ide.png)<img width="1920" height="1080" alt="05ide" src="https://github.com/user-attachments/assets/a1e309d7-ee0a-4a08-b505-08fa7b35975f" />
+<img width="1920" height="1080" alt="05ide" src="https://github.com/user-attachments/assets/a1e309d7-ee0a-4a08-b505-08fa7b35975f" />
 
 
 ### LOGIN PAGE
 
-![LOGIN PAGE](screenshots/02login_page.png)<img width="1920" height="1080" alt="02login_page" src="https://github.com/user-attachments/assets/86e66e46-3403-4edc-93ae-670ba554c2a2" />
+<img width="1920" height="1080" alt="02login_page" src="https://github.com/user-attachments/assets/86e66e46-3403-4edc-93ae-670ba554c2a2" />
 
 
 ### LEARNING HUB
 
-![LEARNING HUB](screenshots/03learning_hub.png)<img width="1920" height="1080" alt="03learning_hub" src="https://github.com/user-attachments/assets/530603d6-e244-45f5-8f77-f9bc44879c94" />
+<img width="1920" height="1080" alt="03learning_hub" src="https://github.com/user-attachments/assets/530603d6-e244-45f5-8f77-f9bc44879c94" />
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```text
 Code-Buddy
@@ -130,7 +130,7 @@ Code-Buddy
 
 ---
 
-## 👥 Team Members
+##  Team Members
 
 ### Adarsh Chaudhary
 
@@ -157,7 +157,7 @@ Responsibilities:
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### Backend Setup
 
@@ -177,7 +177,7 @@ flutter run -d chrome
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 * GitHub Integration
 * Real-time Collaboration
@@ -188,13 +188,13 @@ flutter run -d chrome
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
 
 ---
 
-## ⭐ Academic Relevance
+##  Academic Relevance
 
 This project demonstrates practical implementation of:
 
