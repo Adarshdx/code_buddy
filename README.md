@@ -204,3 +204,7 @@ This project demonstrates practical implementation of:
 * Cloud Computing
 * Database Management
 * Full Stack Development
+
+#Author
+
+Adarsh Chaudhary 
