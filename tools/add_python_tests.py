@@ -3,7 +3,6 @@
 Each test prints `__CODE_BUDDY_ALL_PASSED__` on success; the runner detects
 that sentinel and flips the problem's status to "solved".
 """
-
 import json
 from pathlib import Path
 
