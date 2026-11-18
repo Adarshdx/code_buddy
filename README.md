@@ -5,6 +5,8 @@
 
 
 
+
+
 # Code-Buddy
 
 > An AI-powered mobile coding assistant designed for students and beginner developers. Code-Buddy combines a mini IDE, intelligent debugging, code snippet management, Flutter boilerplate generation, and an interactive learning platform into a single application.
