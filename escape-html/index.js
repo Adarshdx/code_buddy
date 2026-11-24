@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 /*!
  * escape-html
  * Copyright(c) 2012-2013 TJ Holowaychuk
